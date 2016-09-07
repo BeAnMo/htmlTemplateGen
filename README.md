@@ -5,5 +5,5 @@ It works on Linux (Xubuntu Core 16.04 for the curious) currently, but I haven't 
 
 Usage:
   The script creates a new directory with a single html, css, & js file. It allows the user to specify the
-path and directory name, as well as the individual file names. The css and js files are linked into the &lthead&gt
+path and directory name, as well as the individual file names. The css and js files are linked into the &lt;head&gt;
 of the html, and the javascript runs once the 'window' is loaded.
