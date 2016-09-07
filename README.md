@@ -1,7 +1,7 @@
 # htmlTemplateGen
 A Python script that generates a basic web page.
 
-It works on Linux (Xubuntu Core 16.04 for the curious) currently, but I haven't had the time/ability to test on Mac/Win.
+It works on Linux currently (Xubuntu Core 16.04 for the curious), but I haven't had the time/ability to test on Mac/Win.
 <hr>
 Usage:<br/>
 &emsp;The script creates a new directory with a single html, css, & js file. It allows the user to specify the
