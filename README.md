@@ -1,5 +1,5 @@
 # htmlTemplateGen
-Python script that generates a basic web page.
+A Python script that generates a basic web page.
 
 It works on Linux currently, but I haven't had the time/ability to test on Mac/Win.
 
