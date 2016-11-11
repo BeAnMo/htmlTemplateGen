@@ -1,5 +1,6 @@
 # htmlTemplateGen
 A Python script that generates a basic web page.
+(Also a version for Node.js)
 
 For those who like to mess around making websites from scratch.<br/>
 <hr>
