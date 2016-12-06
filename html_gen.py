@@ -1,4 +1,6 @@
 #!/usr/bin/python
+
+# automatically creates in /home/user/ directory
 import os
 
 def make_html(js, css):
@@ -36,22 +38,18 @@ def get_names():
     names['dir'] = input('Enter the new directory name: /')
     print('creating /' + names['dir'])
 
-    names['css'] = [
-        input('enter name for .css file: ') + '.css',
-        make_css()
-        ]
-    print('creating ' + names['css'][0])
+    cssName = input('enter name for the .css file: ') + '.css'
+    jsName = input('enter name for the .js file: ') + '.js'
+    htmlName = input('enter name for the .html file: ') + '.html'
 
-    names['js'] = [
-        input('enter name for .js file: ') + '.js',
-        make_js()
-        ]
-    print('creating ' + names['js'][0])
-    names['html'] = [
-        input('enter name for the .html file: ') + '.html',
-        make_html(names['js'][0], names['css'][0])
-        ]
-    print('creating ' + names['html'][0])
+    names['css'] = [cssName, make_css()]
+    print('created ' + cssName)
+
+    names['js'] = [jsName, make_js()]
+    print('created ' + jsName)
+
+    names['html'] = [htmlName, make_html(jsName, cssName)]
+    print('created ' + htmlName)
 
     return names
 
@@ -61,7 +59,7 @@ def write_file(filename):
     try:
         # directory must be created first
         os.makedirs(filename['dir'])
-        print('made dir')
+        print('created directory')
     except OSError:
             pass
 

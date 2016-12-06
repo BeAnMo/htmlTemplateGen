@@ -1,8 +1,3 @@
-/*
-TODOS:
-- need ability to write files to specified directory
-- call make_()'s in prompt.get()
-*/
 var fs = require('fs');
 var prompt = require('prompt');
 
@@ -46,7 +41,7 @@ prompt.get(schema, function(err, result){
   project.jsName = result.jsName + '.js';
 
   // file creation needs to wait on folder creation
-  make_project();
+  make_dir();
 });
 
 function onErr(err){
@@ -54,11 +49,7 @@ function onErr(err){
   return 1;
 }
 
-function make_project(){
-  // need to check if new directory exists before
-  // making files
-  make_dir();
-
+function put_files_in_dir(){
   for(var key in project){
     switch(key){
       case 'htmlName':
@@ -71,7 +62,7 @@ function make_project(){
         make_file(project.dirName + '/' + project[key], make_js);
         break;
       default:
-        console.log('creating files....');
+        console.log('\t....creating files....');
     }
   }
 }
@@ -81,7 +72,7 @@ function make_file(fileName, fileFunction){
     if(err){
       console.log('error: ' + err);
     } else {
-      console.log(fileName + ' created');
+      console.log('created: ' + fileName);
     }
   })
 }
@@ -91,7 +82,8 @@ function make_dir(){
     if(err){
       throw err;
     } else {
-      console.log('directory created');
+      console.log('created: ' + project.dirName + '/');
+      put_files_in_dir();
     }
   });
 }
